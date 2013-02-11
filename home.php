@@ -58,7 +58,7 @@
 		</div>";
 		}
 		else{
-			echo "<div id='log-in'><a href='logout.php'>Logout</a></div>";
+			echo "<div id='log-in'><h2><p>Hello ".$_SESSION['Username']."!"."</p><a href='logout.php'>Logout</a></h2></div>";
 		}
 		?>
 		

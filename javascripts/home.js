@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#log-in").hide();
+	
 	$("#box1").delay().animate({
 			left: '45%', opacity:'1', width:'10%'
 		}, 500, function() {
@@ -125,6 +125,5 @@ $(document).ready(function(){
 			opacity:'1'
 		}, 300, function() {
 	});
-	
-	$("#log-in").delay(2000).slideDown();
+
 });

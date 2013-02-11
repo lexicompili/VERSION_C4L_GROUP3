@@ -8,19 +8,23 @@
 		$result = pg_query($stmt);
 		if($row=pg_fetch_assoc($result)){
 			
-			$_SESSION['Username']=1;
-			header( 'Location: view_petients.php' ) ;
+			$_SESSION['Username']=$_POST['Username'];
+			header( 'Location: menu.php' );
 		}
 		else{
 			$stmt="SELECT * FROM patient WHERE Username='$Username' and Password='$Password';";
 			$result = pg_query($stmt);
-			if($row=pg_fetch_assoc($result))
-				header( 'Location: menu.php' ) ;
+			if($row=pg_fetch_assoc($result)){
+				$_SESSION['Username']=$_POST['Username'];
+				header( 'Location: menu.php' );
+			}
 			else{
 				$stmt="SELECT * FROM doctor WHERE Username='$Username' and Password='$Password';";
 				$result = pg_query($stmt);
-				if($row=pg_fetch_assoc($result))
+				if($row=pg_fetch_assoc($result)){
+					$_SESSION['Username']=$_POST['Username'];
 					header( 'Location: menu.php' ) ;
+				}
 				else{
 					header( 'Location: home.php' ) ;
 				}
