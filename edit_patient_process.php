@@ -47,7 +47,7 @@
 	$query = "COMMIT";
 	$result = pg_query($connection, $query) or die("Error in query: $query." . pg_last_error($connection));
 	pg_close($connection);
-	header('Location:view_petients.php');
+	header('Location:view_all_patients.php');
 
 
 
