@@ -24,6 +24,24 @@
 	if ($rows > 0){
 	// iterate through resultset
 ?>
+<html>
+	<head>
+	</head>
+<body>
+<script>
+function delete_me(){
+	var r=confirm("Are you sure you want to delete this account?");
+	if (r==true)
+	  {
+	  x="You pressed OK!";
+	  }
+	else
+	  {
+	  x="You pressed Cancel!";
+	  }
+}
+
+</script>
 <center><table id="data" cellpadding=5cellspacing=0>
 <h1>List of Patients</h1>
 <tr>	
@@ -45,8 +63,8 @@
 		<td><?php echo $row->medical_history;?></td>
 		<td><?php echo $row->gender;?></td>
 		<td><?php echo $row->age;?></td>
-		<td><a href="edit_patient.php?username=<?php echo $row->username;?>&submit=Submit">Edit</a></td>
-		<td><a href="delete_patient.php?username=<?php echo $row->username;?>&submit=Submit">Delete</a></td>
+		<td><a href="edit_patient.php?username=<?php echo $row->username;?>&submit=Submit" >Edit</a></td>
+		<td><a href="delete_patient.php?username=<?php echo $row->username;?>&submit=Submit" onclick='delete_me();'>Delete</a></td>
 </tr>
 <?php
 		}
@@ -69,3 +87,4 @@ else{
 	echo "Not logged in!";
 }
 ?>
+</html>

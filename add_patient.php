@@ -13,19 +13,88 @@ $db = "UHS_Information_Management_System";
 ?>
 <html>
 <body>
-
 	<form action="add_patient_process.php" method="post">
-	Desired Username: <input type="text" name="Username"><br>
-	Password: <input type="password" name="Password"><br>
-	Full Name: <input type="text" name="Name"><br>
-	Gender:<br> Male<input type="radio" value="Male" name="Gender">
-	Female<input type="radio" value="Female" name="Gender"><br>
-	Age: <input type="number" name="Age"><br>
-	Address: <textarea rows="5" cols="20" name="Address" wrap="physical"></textarea><br>
-	Medical History: <input type="text" name="Medical_history"><br>
-	Contact Number: <input type="text" name="Contact_number"><br>
-	E-mail Address: <input type="email" name="Email_address"><br>
-	<input type="submit">
+		<table>
+			<tr>
+				<td>
+					Desired Username:
+				</td>
+				<td>
+					<input type="text" placeholder="20xx-xxxxx" name="Username" required='required'  onfocus="this.placeholder = ''" onblur="this.placeholder = '20xx-xxxxx'">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Password:
+				</td>
+				<td>
+					<input type="password" name="Password" required='required'>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Full Name:
+				</td>
+				<td>
+					<input type="text" name="Name" required='required'>
+				</td>
+			</tr>
+			<tr> 
+				<td>
+					Gender:
+				</td>
+				<td>
+					Male<input type="radio" value="Male" name="Gender" required='required'><br>
+					Female<input type="radio" value="Female" name="Gender" required='required'>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Age:
+				</td>
+				<td>
+					<input type="number" name="Age" required='required' min='14' max='60' step='1'>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Address:
+				</td>
+				<td>
+					<textarea rows="5" cols="20" name="Address" wrap="physical" required='required'></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Medical History:
+				</td>
+				<td>
+					<input type="text" name="Medical_history" required='required'>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Contact Number:
+				</td>
+				<td>
+					<input type="text" name="Contact_number" required='required'>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					E-mail Address:
+				</td>
+				<td>
+					<input type="email" name="Email_address" required='required'>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit">
+				</td>
+				<td>
+				</td>
+			</tr>
 	</form>
 
 </body>
