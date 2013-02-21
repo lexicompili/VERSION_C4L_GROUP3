@@ -34,6 +34,22 @@
 	if ($rows > 0){
 	// iterate through resultset
 ?>
+
+<script>
+function delete_me(){
+	var r=confirm("Are you sure you want to delete this account?");
+	if (r==true)
+	  {
+	  x="You pressed OK!";
+	  }
+	else
+	  {
+	  x="You pressed Cancel!";
+	  }
+}
+
+</script>
+
 <center><table id="data" cellpadding=5cellspacing=0>
 <h1>List of Doctors</h1>
 <tr>	
@@ -48,7 +64,7 @@
 			$row = pg_fetch_object($result, $i);
 			$row1 = pg_fetch_object($resultContactNumber, $i);
 			$row2 = pg_fetch_object($resultEmailAddress, $i);
-			$row3 = pg_fetch_object($resultSpecialization, $i);
+			//$row3 = pg_fetch_object($resultSpecialization, $i);
 			
 ?>
 
@@ -57,9 +73,9 @@
 		<td><?php echo $row->name; ?></td>
 		<td><?php echo $row1->contact_number; ?></td>
 		<td><?php echo $row2->email_address;?></td>
-		<td><?php echo $row3->specialization;?></td>
-		<td><a href="editDoctor.php?username=<?php echo $row->username;?>&submit=Submit">Edit</a></td>
-		<td><a href="deleteDoctor.php?username=<?php echo $row->username;?>&submit=Submit">Delete</a></td>
+		<!--<td><?php echo $row3->specialization;?></td>-->
+		<td><a href="edit_doctor.php?username=<?php echo $row->username;?>&submit=Submit">Edit</a></td>
+		<td><a href="delete_doctor.php?username=<?php echo $row->username;?>&submit=Submit" onclick='delete_me();'>Delete</a></td>
 </tr>
 <?php
 		}

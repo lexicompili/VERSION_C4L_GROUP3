@@ -47,27 +47,24 @@ $db = "UHS_Information_Management_System";
 				Specialization:
 			</td>
 			<td>
-				<input type="checkbox" name="Specialization" value="Anaesthetics">Anaesthetics
-				<input type="checkbox" name="Specialization" value="Pathology">Pathology
-				<input type="checkbox" name="Specialization" value="Cardiology">Cardiology
-				<input type="checkbox" name="Specialization" value="Endocrinology">Endocrinology
-				<input type="checkbox" name="Specialization" value="Gynaecology">Gynaecology<br>
-				<input type="checkbox" name="Specialization" value="Microbiology">Microbiology
-				<input type="checkbox" name="Specialization" value="Nephrology">Nephrology
-				<input type="checkbox" name="Specialization" value="Neurosurgery">Neurosurgery
-				<input type="checkbox" name="Specialization" value="Oncology">Oncology
-				<input type="checkbox" name="Specialization" value="Ophthalmology">Ophthalmology<br>
-				<input type="checkbox" name="Specialization" value="Pathology">Pathology
-				<input type="checkbox" name="Specialization" value="Pediatrics">Pediatrics
-				<input type="checkbox" name="Specialization" value="Plastic surgery">Plastic surgery
-				<input type="checkbox" name="Specialization" value="Psychiatry">Psychiatry
-				<input type="checkbox" name="Specialization" value="Radiology">Radiology<br>
-				<input type="checkbox" name="Specialization" value="Rheumatology">Rheumatology
-				<input type="checkbox" name="Specialization" value="Other">Other<br>
-				
-				
-				
-				
+				<input type="checkbox" name="Specialization[]" value="Anaesthetics">Anaesthetics
+				<input type="checkbox" name="Specialization[]" value="Pathology">Pathology
+				<input type="checkbox" name="Specialization[]" value="Cardiology">Cardiology
+				<input type="checkbox" name="Specialization[]" value="Endocrinology">Endocrinology
+				<input type="checkbox" name="Specialization[]" value="Gynaecology">Gynaecology<br>
+				<input type="checkbox" name="Specialization[]" value="Microbiology">Microbiology
+				<input type="checkbox" name="Specialization[]" value="Nephrology">Nephrology
+				<input type="checkbox" name="Specialization[]" value="Neurosurgery">Neurosurgery
+				<input type="checkbox" name="Specialization[]" value="Oncology">Oncology
+				<input type="checkbox" name="Specialization[]" value="Ophthalmology">Ophthalmology<br>
+				<input type="checkbox" name="Specialization[]" value="Pathology">Pathology
+				<input type="checkbox" name="Specialization[]" value="Pediatrics">Pediatrics
+				<input type="checkbox" name="Specialization[]" value="Plastic surgery">Plastic surgery
+				<input type="checkbox" name="Specialization[]" value="Psychiatry">Psychiatry
+				<input type="checkbox" name="Specialization[]" value="Radiology">Radiology<br>
+				<input type="checkbox" name="Specialization[]" value="Rheumatology">Rheumatology
+				<input type="checkbox" name="Specialization[]" value="Other">Other<br>
+
 			</td>
 		</tr>
 		<tr>

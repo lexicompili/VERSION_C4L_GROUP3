@@ -53,7 +53,7 @@ $db = "UHS_Information_Management_System";
 					Age:
 				</td>
 				<td>
-					<input type="number" name="Age" required='required' min='14' max='60' step='1'>
+					<input type="number" name="Age" required='required' min='14' max='60' step='1' placeholder='14'>
 				</td>
 			</tr>
 			<tr>

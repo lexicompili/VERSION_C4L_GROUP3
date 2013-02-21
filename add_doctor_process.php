@@ -27,10 +27,16 @@ $db = "UHS_Information_Management_System";
 	$query = "COMMIT";
 	$result = pg_query($connection, $query) or die("Error in query: $query." . pg_last_error($connection));
 	
-	$query = "INSERT INTO doctor_specialization(username,specialization) VALUES('$_POST[Username]','$_POST[Specialization]')";
-	$result = pg_query($connection,$query) or die("Error in query: $query. " . pg_last_error($connection));
-	$query = "COMMIT";
-	$result = pg_query($connection, $query) or die("Error in query: $query." . pg_last_error($connection));
+	
+		foreach($_POST['Specialization'] as $special) {
+			$query = "INSERT INTO doctor_specialization(username,specialization) VALUES('$_POST[Username]','$special')";
+			$result = pg_query($connection,$query) or die("Error in query: $query. " . pg_last_error($connection));
+			$query = "COMMIT";
+			$result = pg_query($connection, $query) or die("Error in query: $query." . pg_last_error($connection));
+			header('Location:home.php');
+		}
+
+
 	
 	
 	pg_close($connection);

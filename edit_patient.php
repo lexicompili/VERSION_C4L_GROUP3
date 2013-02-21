@@ -57,7 +57,7 @@
 				
 				<tr>
 					<td><label>Username:</label></td>
-					<td><input type='text' name="usernamePatient" placeholder='New Name' required='required' value="<?php echo $row->username; ?>" id="usernamePatient" onclick="disableTextBox()"/></td>
+					<td><input type='text' name="usernamePatient" placeholder='New Name' required='required' disabled="disabled" value="<?php echo $row->username; ?>" id="usernamePatient" onclick="disableTextBox()"/></td>
 				</tr>
 				
 				<tr>
