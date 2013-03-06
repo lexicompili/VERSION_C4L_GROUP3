@@ -1,4 +1,4 @@
-<?
+<?php
 $host = "localhost";
 $user = "postgres";
 $pass = "cmsc128";
@@ -13,6 +13,66 @@ $db = "UHS_Information_Management_System";
 <!DOCTYPE html>
 <html>
 	<head>
+	<script type="text/javascript" src="javascripts/jquery.js"></script>
+<script type="text/javascript" src="javascripts/pass_strength.js"></script>
+
+<script>
+			$(document).ready( function() {
+
+				$(".password_test").passStrength({
+					userid:	"#user_id"
+					});
+				
+			});                                                                                  1
+		</script>
+		
+<script type="text/javascript">
+jq = jQuery.noConflicts();
+jq(document).ready(function() {  
+  
+        //the min chars for username  
+        var min_chars = 3;  
+  
+        //result texts  
+        var characters_error = 'Minimum amount of chars is 3';  
+        var checking_html = 'Checking...';  
+  
+        //when button is clicked  
+        jq('#user_id').keyup(function(){  
+            //run the character number check  
+            if(jq('#user_id').val().length < min_chars){  
+                //if it's bellow the minimum show characters_error text '  
+                jq('#username_availability_result').html(characters_error);  
+            }else{  
+                //else show the cheking_text and run the function to check  
+                jq('#username_availability_result').html(checking_html);  
+                check_availability();  
+            }  
+        });  
+  
+  });  
+  
+//function to check username availability  
+function check_availability(){  
+  
+        //get the username  
+        var username = jq('#user_id').val();  
+  
+        //use ajax to run the check  
+        jq.post("try_user.php", { username: username },  
+            function(result){  
+                //if the result is 1  
+                if(result == 1){  
+                    //show that the username is available  
+                    jq('#username_availability_result').html(username + ' is Available');  
+                }else{  
+                    //show that the username is NOT available  
+                    jq('#username_availability_result').html(username + ' is not Available');  
+                }  
+        });
+  
+}
+</script>
 	</head>
 <body>
 
@@ -23,7 +83,8 @@ $db = "UHS_Information_Management_System";
 				Desired Username: 
 			</td>
 			<td>
-				<input type="text" name="Username" required='required' >
+				<input type="text" name="Username" required='required' id="user_id">
+				<div id='username_availability_result'></div>  
 			</td>
 		</tr>
 		<tr>
@@ -31,7 +92,7 @@ $db = "UHS_Information_Management_System";
 				Password:
 			</td>
 			<td>
-				<input type="password" name="Password" required='required'>
+				<input type="password" name="Password" required='required' id="password" class="password_test">
 			</td>
 		</tr>
 		<tr>
@@ -62,8 +123,8 @@ $db = "UHS_Information_Management_System";
 				<input type="checkbox" name="Specialization[]" value="Plastic surgery">Plastic surgery
 				<input type="checkbox" name="Specialization[]" value="Psychiatry">Psychiatry
 				<input type="checkbox" name="Specialization[]" value="Radiology">Radiology<br>
-				<input type="checkbox" name="Specialization[]" value="Rheumatology">Rheumatology
-				<input type="checkbox" name="Specialization[]" value="Other">Other<br>
+				<input type="checkbox" name="Specialization[]" value="Rheumatology">Rheumatology<br>
+				<input type="textbox" name="Specialization[]">Others (Please Specify)<br>
 
 			</td>
 		</tr>
